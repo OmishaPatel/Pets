@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useGlobalContext } from "../context";
+import { useSelector } from "react-redux";
 import axios from "axios";
 
 const DownloadImage = () => {
-  const { pets } = useGlobalContext();
+  const pets = useSelector((state) => state.items);
   // options hold all the urls selected by user for images
   const [options, setOptions] = useState([]);
   const handleChange = (e) => {

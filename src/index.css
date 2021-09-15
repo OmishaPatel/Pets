@@ -161,7 +161,7 @@ Pet
 .petinfo img {
   border-radius: var(--mainBorderRadius);
   height: 400px;
-  width: 300px;
+  width: 400px;
 }
 .petinfo p {
   font-weight: bold;

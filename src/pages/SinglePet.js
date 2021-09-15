@@ -1,11 +1,11 @@
 import React from "react";
-import { useGlobalContext } from "../context";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Button } from "../components/styledcomponents/Button.style";
+import { useSelector } from "react-redux";
 const SinglePet = () => {
   const { id } = useParams();
-  const { pets } = useGlobalContext();
+  const pets = useSelector((state) => state.items);
 
   const getImage = async (image) => {
     try {

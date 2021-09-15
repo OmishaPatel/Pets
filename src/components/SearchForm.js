@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useGlobalContext } from "../context";
+import { useSelector, useDispatch } from "react-redux";
+import { filteredPet } from "../action";
 const SearchForm = () => {
-  const { pets, setPets } = useGlobalContext();
+  const pets = useSelector((state) => state.items);
+  const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
   const searchValue = useRef("");
 
@@ -25,8 +27,7 @@ const SearchForm = () => {
             info,
           };
         });
-      console.log(filteredData);
-      setPets(filteredData);
+      dispatch(filteredPet(filteredData));
     } else {
       return pets;
     }
